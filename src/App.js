@@ -1,3 +1,9 @@
+import { Counter } from "./components/Counter";
+
 export default function App() {
-  return <h2>Hello world</h2>;
+  return (
+    <>
+      <Counter />
+    </>
+  );
 }
