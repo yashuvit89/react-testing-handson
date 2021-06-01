@@ -95,3 +95,7 @@ test("Exceptions", () => {
   expect(() => someWrongFunction()).toThrow("something wrong");
   expect(() => someWrongFunction()).toThrow(/wrong/);
 });
+
+/* 
+  Add toMatchObject, toMatch
+*/

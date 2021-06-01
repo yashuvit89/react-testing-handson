@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { fetchPostByIdUsingCallback } from "../api/01-get-post";
+import {
+  fetchPostByIdUsingCallback,
+  fetchPostByIdUsingPromise,
+} from "../api/01-get-post";
 export const Counter = () => {
   const [count, setCount] = useState(0);
 
@@ -8,7 +11,10 @@ export const Counter = () => {
   };
 
   useEffect(() => {
-    fetchPostByIdUsingCallback(count, CB);
+    // fetchPostByIdUsingCallback(count, CB);
+    fetchPostByIdUsingPromise(count).then((data) =>
+      console.log("data from promise", data)
+    );
   }, [count]);
 
   return (

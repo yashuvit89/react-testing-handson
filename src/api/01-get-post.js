@@ -1,5 +1,15 @@
+export const URL = `https://jsonplaceholder.typicode.com/posts`;
+
 export const fetchPostByIdUsingCallback = (id, callback) => {
-  fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+  return fetch(`${URL}/${id}`)
     .then((response) => response.json())
     .then(callback);
+};
+
+export const fetchPostByIdUsingPromise = (id) => {
+  return fetch(`${URL}/${id}`).then((response) => response.json());
+};
+
+export const fetchReject = () => {
+  return fetch(`https://asdlfkjsd`).then((response) => response.json());
 };
