@@ -1,7 +1,15 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import { fetchPostByIdUsingCallback } from "../api/01-get-post";
 export const Counter = () => {
   const [count, setCount] = useState(0);
+
+  const CB = (data) => {
+    console.log("Callback", data);
+  };
+
+  useEffect(() => {
+    fetchPostByIdUsingCallback(count, CB);
+  }, [count]);
 
   return (
     <>
