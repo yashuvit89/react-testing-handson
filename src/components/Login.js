@@ -3,9 +3,11 @@ import React, { useState } from "react";
 export const Login = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [payload, setPayload] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setPayload({ name, password });
     console.log("On submit:", name, password);
   };
 
@@ -34,9 +36,12 @@ export const Login = () => {
           </label>
         </div>
         <div>
-          <button>Submit</button>
+          <button type="sumbit">Submit</button>
         </div>
       </form>
+      <div>
+        <h3>{payload.name}</h3>
+      </div>
     </>
   );
 };
