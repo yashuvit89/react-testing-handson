@@ -13,3 +13,9 @@ export const fetchPostByIdUsingPromise = (id) => {
 export const fetchReject = () => {
   return fetch(`https://asdlfkjsd`).then((response) => response.json());
 };
+
+export const fetchThrowError = () => {
+  try {
+    throw new Error("error");
+  } catch (e) {}
+};

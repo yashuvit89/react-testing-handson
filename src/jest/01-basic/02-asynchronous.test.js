@@ -2,6 +2,7 @@ import {
   fetchPostByIdUsingCallback,
   fetchPostByIdUsingPromise,
   fetchReject,
+  fetchThrowError,
 } from "../../api/01-get-post";
 /* 
     Link - https://jestjs.io/docs/asynchronous
@@ -53,4 +54,9 @@ test("resolves", () => {
   return expect(fetchPostByIdUsingPromise(1)).resolves.toMatchObject({
     id: 1,
   });
+});
+
+// reject
+test("reject", () => {
+  return expect(fetchThrowError()).rejects.toMatch("error");
 });
